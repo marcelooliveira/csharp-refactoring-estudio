@@ -1,20 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "caelum-stella-csharp", "caelum-stella-csharp\caelum-stella-csharp.csproj", "{E120764F-9D24-4EC1-AB90-B24456A0FD62}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "caelum-stella-csharp-netcore-test", "caelum-stella-csharp-test\caelum-stella-csharp-netcore-test.csproj", "{5EA8C917-01B1-4F38-BDD8-BBBD3ACCD53D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conteudo", "Conteudo", "{B93435B5-6F01-4DDB-BB19-99ACCE9086BF}"
-	ProjectSection(SolutionItems) = preProject
-		Conteudo.txt = Conteudo.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{F360D897-51BF-4769-8A3B-BE590CF075CC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "refatoracao", "refatoracao\refatoracao.csproj", "{B6D0DB85-54D1-45EE-8D9B-24DABADA6E7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "refatoracao", "refatoracao\refatoracao.csproj", "{B6D0DB85-54D1-45EE-8D9B-24DABADA6E7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,9 +30,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{F360D897-51BF-4769-8A3B-BE590CF075CC} = {B93435B5-6F01-4DDB-BB19-99ACCE9086BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {63998586-B2FB-4D7E-8B9D-E99C092B3603}
