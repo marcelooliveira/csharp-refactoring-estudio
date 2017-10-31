@@ -24,7 +24,7 @@ namespace refatoracao.Aula01.R01.ExtractMethod.antes
             {
                 decimal valorItem = item.Quantidade * item.PrecoBase;
                 Console.WriteLine($"{item.Desconto}: {item.Quantidade} unidades, R$ {valorItem}");
-                total += valorItem;
+                total = total + valorItem;
             }
 
             // imprimir detalhes
