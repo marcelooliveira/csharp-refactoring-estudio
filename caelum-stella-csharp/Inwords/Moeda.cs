@@ -24,20 +24,13 @@ namespace Caelum.Stella.CSharp.Inwords
         public override string Extenso()
         {
             StringBuilder builder = new StringBuilder();
+            MontarInteiros(builder);
+            MontarCentavos(builder);
+            return builder.ToString();
+        }
 
-            //Montar os inteiros
-            if (numeroOrigem < 0)
-            {
-                throw new ArgumentOutOfRangeException();
-            }
-            else if (numeroOrigem >= 1.0 || numeroOrigem == 0)
-            {
-                BuildNumeroMoeda(numeroOrigem, builder);
-                BuildPreposicaoMilhoes(numeroOrigem, builder);
-                BuildPalavraMoeda(numeroOrigem, builder);
-            }
-
-            //Montar os centavos
+        private void MontarCentavos(StringBuilder builder)
+        {
             double centavos = Math.Round((numeroOrigem - Math.Truncate(numeroOrigem)) * 100);
             if (centavos > 0)
             {
@@ -48,7 +41,20 @@ namespace Caelum.Stella.CSharp.Inwords
                 builder.Append(" ");
                 BuildPalavraCentavos(centavos, builder);
             }
-            return builder.ToString();
+        }
+
+        private void MontarInteiros(StringBuilder builder)
+        {
+            if (numeroOrigem < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else if (numeroOrigem >= 1.0 || numeroOrigem == 0)
+            {
+                BuildNumeroMoeda(numeroOrigem, builder);
+                BuildPreposicaoMilhoes(numeroOrigem, builder);
+                BuildPalavraMoeda(numeroOrigem, builder);
+            }
         }
 
         protected virtual void BuildPreposicaoMilhoes(double numeroOrigem, StringBuilder builder)

@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Caelum.Stella.CSharp.Test.Http
 {
-    [TestClass]
+    //[TestClass]
     public class CEPTest
     {
         [TestMethod]

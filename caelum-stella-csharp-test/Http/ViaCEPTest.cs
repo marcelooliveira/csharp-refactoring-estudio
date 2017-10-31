@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Caelum.Stella.CSharp.Test.Http
 {
-    [TestClass]
+    //[TestClass]
     public class ViaCEPTest
     {
         private const int DEFAULT_VIACEP_REQUEST_DELAY = 100;
