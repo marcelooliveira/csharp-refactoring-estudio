@@ -10,12 +10,7 @@ namespace refatoracao.R02.InlineMethod.depois
 
         int GetAvaliacao()
         {
-            return (TemMaisDeCincoEntregasNoturnas()) ? 2 : 1;
-        }
-
-        bool TemMaisDeCincoEntregasNoturnas()
-        {
-            return qtdeEntregasNoturnas > 5;
+            return (qtdeEntregasNoturnas > 5) ? 2 : 1;
         }
     }
 }
