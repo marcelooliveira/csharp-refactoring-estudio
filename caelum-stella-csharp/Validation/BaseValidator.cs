@@ -65,9 +65,11 @@ namespace Caelum.Stella.CSharp.Validation
 
                     string documentSubstring = unformattedDocument.Substring(0, DocumentLength - 2);
 
+                    string digito1 = GetDigitoVerificador(documentSubstring).ToString();
+                    string digito2 = GetDigitoVerificador(documentSubstring + digito1).ToString();
                     if (unformattedDocument != documentSubstring 
-                        + GetDigitoVerificador(documentSubstring).ToString() 
-                        + GetDigitoVerificador(documentSubstring + GetDigitoVerificador(documentSubstring).ToString()).ToString())
+                        + digito1
+                        + digito2)
                         errors.Add(DocumentError.InvalidCheckDigits);
                 }
 
