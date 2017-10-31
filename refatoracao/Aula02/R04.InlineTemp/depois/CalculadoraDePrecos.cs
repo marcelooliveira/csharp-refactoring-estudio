@@ -8,8 +8,7 @@ namespace refatoracao.R04.InlineTemp.depois
     {
         bool TemDesconto(Pedido pedido)
         {
-            decimal valorProdutos = pedido.ValorProdutos();
-            return (valorProdutos > 1000);
+            return (pedido.ValorProdutos() > 1000);
         }
     }
 
