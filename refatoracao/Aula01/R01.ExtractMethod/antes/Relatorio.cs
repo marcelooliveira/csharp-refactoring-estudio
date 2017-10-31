@@ -18,7 +18,7 @@ namespace refatoracao.Aula01.R01.ExtractMethod.antes
 
             // imprimir cabeçalho
             Console.WriteLine("*****************************");
-            Console.WriteLine("****** Total do Cliente *****");
+            Console.WriteLine("********** Itens ************");
             Console.WriteLine("*****************************");
 
             // imprimir itens
@@ -30,6 +30,9 @@ namespace refatoracao.Aula01.R01.ExtractMethod.antes
             }
 
             // imprimir detalhes
+            Console.WriteLine("*****************************");
+            Console.WriteLine("********** Resumo************");
+            Console.WriteLine("*****************************");
             Console.WriteLine("nome: " + pedido.Cliente);
             Console.WriteLine("valor: " + total);
         }
