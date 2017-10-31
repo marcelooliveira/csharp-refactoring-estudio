@@ -16,12 +16,10 @@ namespace refatoracao.Aula01.R01.ExtractMethod.antes
             pedido.AddItem("Voldax", 3, 10m, 0m, 3m);
             pedido.AddItem("Tranlab", 7, 10m, 0m, 3m);
 
-            // imprimir cabeçalho
+            // imprimir itens
             Console.WriteLine("*****************************");
             Console.WriteLine("********** Itens ************");
             Console.WriteLine("*****************************");
-
-            // imprimir itens
             foreach (var item in pedido.Itens)
             {
                 decimal valorItem = item.Quantidade * item.PrecoBase;
