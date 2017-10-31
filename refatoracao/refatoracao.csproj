@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Aula01\R02.InlineMethod\**" />
     <Compile Remove="Aula01\R03.ExtractVariable\**" />
     <Compile Remove="Aula01\R04.InlineTemp\**" />
+    <Compile Remove="Aula02\R04.InlineTemp\**" />
     <Compile Remove="R05.ReplaceTempWithQuery\**" />
     <Compile Remove="R06.SplitTemporaryVariable\**" />
     <Compile Remove="R07.RemoveAssignmentsToParameters\**" />
@@ -70,9 +70,9 @@
     <Compile Remove="R62.FormTemplateMethod\**" />
     <Compile Remove="R63.ReplaceInheritanceWithDelegation\**" />
     <Compile Remove="R64.ReplaceDelegationWithInheritance\**" />
-    <EmbeddedResource Remove="Aula01\R02.InlineMethod\**" />
     <EmbeddedResource Remove="Aula01\R03.ExtractVariable\**" />
     <EmbeddedResource Remove="Aula01\R04.InlineTemp\**" />
+    <EmbeddedResource Remove="Aula02\R04.InlineTemp\**" />
     <EmbeddedResource Remove="R05.ReplaceTempWithQuery\**" />
     <EmbeddedResource Remove="R06.SplitTemporaryVariable\**" />
     <EmbeddedResource Remove="R07.RemoveAssignmentsToParameters\**" />
@@ -134,9 +134,9 @@
     <EmbeddedResource Remove="R62.FormTemplateMethod\**" />
     <EmbeddedResource Remove="R63.ReplaceInheritanceWithDelegation\**" />
     <EmbeddedResource Remove="R64.ReplaceDelegationWithInheritance\**" />
-    <None Remove="Aula01\R02.InlineMethod\**" />
     <None Remove="Aula01\R03.ExtractVariable\**" />
     <None Remove="Aula01\R04.InlineTemp\**" />
+    <None Remove="Aula02\R04.InlineTemp\**" />
     <None Remove="R05.ReplaceTempWithQuery\**" />
     <None Remove="R06.SplitTemporaryVariable\**" />
     <None Remove="R07.RemoveAssignmentsToParameters\**" />
