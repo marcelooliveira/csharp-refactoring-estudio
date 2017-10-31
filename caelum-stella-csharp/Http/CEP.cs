@@ -16,10 +16,11 @@ namespace Caelum.Stella.CSharp.Http
 
         public CEP(string cepAsString)
         {
+            string unformattedCEP = cepAsString.Replace("-", "");
             if (cepAsString == null)
                 this.cepAsString = null;
             else if (Regex.IsMatch(cepAsString, RegexFormatted))
-                this.cepAsString = cepAsString.Replace("-", "");
+                this.cepAsString = unformattedCEP;
             else if (new Regex(RegexUnformatted).IsMatch(cepAsString))
                 this.cepAsString = cepAsString;
             else
