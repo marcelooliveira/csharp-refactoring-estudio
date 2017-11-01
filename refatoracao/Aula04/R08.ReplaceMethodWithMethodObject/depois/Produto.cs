@@ -63,3 +63,4 @@ namespace refatoracao.R08.ReplaceMethodWithMethodObject.depois
         }
     }
 }
+
