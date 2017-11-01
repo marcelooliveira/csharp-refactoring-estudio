@@ -8,19 +8,22 @@ namespace refatoracao.R07.RemoveAssignmentsToParameters.depois
     {
         decimal GetDescontoFinal(decimal descontoInicial, int quantidade, int clienteHaQuantosAnos)
         {
-            if (descontoInicial > 50M)
+            decimal resultado = descontoInicial;
+
+            if (resultado > 50M)
             {
-                descontoInicial = 50M;
+                resultado = 50M;
             }
             if (quantidade > 100)
             {
-                descontoInicial += 15M;
+                resultado += 15M;
             }
             if (clienteHaQuantosAnos > 4)
             {
-                descontoInicial += 10M;
+                resultado += 10M;
             }
-            return descontoInicial;
+
+            return resultado;
         }
     }
 }
