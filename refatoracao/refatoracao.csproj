@@ -203,4 +203,9 @@
     <None Remove="R64.ReplaceDelegationWithInheritance\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="Aula04\R08.ReplaceMethodWithMethodObject\antes\Produto.cs" />
+    <Compile Include="Aula04\R08.ReplaceMethodWithMethodObject\depois\Produto.cs" />
+  </ItemGroup>
+
 </Project>

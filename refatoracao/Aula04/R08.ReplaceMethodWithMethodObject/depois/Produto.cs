@@ -30,9 +30,42 @@ namespace refatoracao.R08.ReplaceMethodWithMethodObject.depois
 
         decimal Preco(decimal precoBase, decimal acrescimo, decimal desconto)
         {
+            return new CalculadoraDePrecos(this, precoBase, acrescimo, desconto).Calcular();
+        }
+
+        public void HabilitarPromocao()
+        {
+            if (desconto == 0)
+            {
+                this.promocional = true;
+            }
+            else
+            {
+                throw new Exception("Produto com desconto não pode ser transformado em produto promocional!");
+            }
+        }
+    }
+
+    class CalculadoraDePrecos
+    {
+        private readonly Produto produto;
+        private decimal precoBase;
+        private decimal acrescimo;
+        private decimal desconto;
+
+        public CalculadoraDePrecos(Produto produto, decimal precoBase, decimal acrescimo, decimal desconto)
+        {
+            this.produto = produto;
+            this.precoBase = precoBase;
+            this.acrescimo = acrescimo;
+            this.desconto = desconto;
+        }
+
+        public decimal Calcular()
+        {
             var resultado = precoBase;
 
-            if (this.promocional && desconto > 0)
+            if (produto.Promocional && desconto > 0)
             {
                 throw new Exception("Produto já é promocional e não pode ter desconto!");
             }
@@ -48,18 +81,6 @@ namespace refatoracao.R08.ReplaceMethodWithMethodObject.depois
             }
 
             return precoBase + precoBase * (acrescimo - desconto);
-        }
-
-        public void HabilitarPromocao()
-        {
-            if (desconto == 0)
-            {
-                this.promocional = true;
-            }
-            else
-            {
-                throw new Exception("Produto com desconto não pode ser transformado em produto promocional!");
-            }
         }
     }
 }
