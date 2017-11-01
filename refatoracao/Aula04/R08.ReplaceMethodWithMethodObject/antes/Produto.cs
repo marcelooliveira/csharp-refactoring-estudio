@@ -30,8 +30,24 @@ namespace refatoracao.R08.ReplaceMethodWithMethodObject.antes
 
         double Preco(double precoBase, double acrescimo, double desconto)
         {
-            //aqui viria um cálculo muito mais complicado do que esse...
-            return precoBase + acrescimo - desconto;
+            var resultado = precoBase;
+
+            if (acrescimo > 0 && desconto > 0)
+            {
+                throw new Exception("Produto não pode ter acréscimo e desconto ao mesmo tempo!");
+            }
+
+            if (desconto > 20)
+            {
+                desconto = 20;
+            }
+
+            if (acrescimo > 15)
+            {
+                acrescimo = 15;
+            }
+
+            return precoBase + precoBase * (acrescimo - desconto);
         }
 
         public void HabilitarPromocao()
