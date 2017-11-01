@@ -208,4 +208,8 @@
     <Compile Include="Aula04\R08.ReplaceMethodWithMethodObject\depois\Produto.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Aula04\R09.SubstituteAlgorithm\antes\SubstituteAlgorithm.png" />
+  </ItemGroup>
+
 </Project>
