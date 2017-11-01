@@ -10,6 +10,7 @@ namespace refatoracao.Aula03.R06.SplitTemporaryVariable.antes
         {
             double temp = 2 * (altura + largura);
             System.Console.WriteLine($"Perímetro: {temp}");
+
             temp = altura * largura;
             System.Console.WriteLine($"Área: {temp}");
         }
