@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace refatoracao.R06.SplitTemporaryVariable.antes
+namespace refatoracao.Aula03.R06.SplitTemporaryVariable.depois
 {
     class Retangulo
     {
