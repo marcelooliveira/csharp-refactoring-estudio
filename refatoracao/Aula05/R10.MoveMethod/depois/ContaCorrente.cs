@@ -8,17 +8,7 @@ namespace refatoracao.R10.MoveMethod.depois
     {
         public decimal GetTaxaChequeEspecial()
         {
-            if (tipo.EhPremium)
-            {
-                var result = 10.0M;
-                if (this.diasEmDescoberto > 7)
-                {
-                    result += (diasEmDescoberto - 7) * 0.01M;
-                }
-                return result;
-            }
-
-            return diasEmDescoberto * 1.75M;
+            return tipo.GetTaxaChequeEspecial(this);
         }
 
         public ContaCorrente(TipoConta type)
@@ -40,5 +30,19 @@ namespace refatoracao.R10.MoveMethod.depois
     {
         public bool EhPremium { get; set; }
 
+        public decimal GetTaxaChequeEspecial(ContaCorrente conta)
+        {
+            if (this.EhPremium)
+            {
+                var result = 10.0M;
+                if (conta.DiasEmDescoberto > 7)
+                {
+                    result += (conta.DiasEmDescoberto - 7) * 0.01M;
+                }
+                return result;
+            }
+
+            return conta.DiasEmDescoberto * 1.75M;
+        }
     }
 }
