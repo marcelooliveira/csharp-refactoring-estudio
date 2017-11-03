@@ -10,71 +10,67 @@ namespace refatoracao.R12.ExtractClass.depois
         {
             RazaoSocial = razaoSocial;
             CNPJ = cNPJ;
-            EndEntregaLogradouro = endEntregaLogradouro;
-            EndEntregaNumero = endEntregaNumero;
-            EndEntregaComplemento = endEntregaComplemento;
-            EndEntregaBairro = endEntregaBairro;
-            EndEntregaCEP = endEntregaCEP;
-            EndEntregaMunicipio = endEntregaMunicipio;
-            EndEntregaUF = endEntregaUF;
-            EndComercialLogradouro = endComercialLogradouro;
-            EndComercialNumero = endComercialNumero;
-            EndComercialComplemento = endComercialComplemento;
-            EndComercialBairro = endComercialBairro;
-            EndComercialCEP = endComercialCEP;
-            EndComercialMunicipio = endComercialMunicipio;
-            EndComercialUF = endComercialUF;
+            EndEntrega = new Endereco(endEntregaLogradouro, endEntregaNumero, endEntregaComplemento, endEntregaBairro, endEntregaCEP, endEntregaMunicipio, endEntregaUF);
+            EndComercial = new Endereco(endComercialLogradouro, endComercialNumero, endComercialComplemento, endComercialBairro, endComercialCEP, endComercialMunicipio, endComercialUF);
         }
 
         public string RazaoSocial { get; private set; }
         public string CNPJ { get; private set; }
 
-        public string EndEntregaLogradouro { get; private set; }
-        public string EndEntregaNumero { get; private set; }
-        public string EndEntregaComplemento { get; private set; }
-        public string EndEntregaBairro { get; private set; }
-        public string EndEntregaCEP { get; private set; }
-        public string EndEntregaMunicipio { get; private set; }
-        public string EndEntregaUF { get; private set; }
+        public Endereco EndEntrega { get; private set; }
 
-        public string EndComercialLogradouro { get; private set; }
-        public string EndComercialNumero { get; private set; }
-        public string EndComercialComplemento { get; private set; }
-        public string EndComercialBairro { get; private set; }
-        public string EndComercialCEP { get; private set; }
-        public string EndComercialMunicipio { get; private set; }
-        public string EndComercialUF { get; private set; }
+        public Endereco EndComercial { get; private set; }
 
         public string GetTextoEnderecoComercial()
         {
-            return $"Endereço: {EndComercialLogradouro} {EndComercialNumero} {EndComercialComplemento} - {EndComercialBairro} - CEP {EndComercialCEP} - {EndComercialMunicipio} - {EndComercialUF}";
+            return EndComercial.GetTexto();
         }
 
         public string GetTextoEnderecoEntrega()
         {
-            return $"Endereço: {EndEntregaLogradouro} {EndEntregaNumero} {EndEntregaComplemento} - {EndEntregaBairro} - CEP {EndEntregaCEP} - {EndEntregaMunicipio} - {EndEntregaUF}";
+            return EndEntrega.GetTexto();
         }
 
         public void UpdateEnderecoEntrega(string endEntregaLogradouro, string endEntregaNumero, string endEntregaComplemento, string endEntregaBairro, string endEntregaCEP, string endEntregaMunicipio, string endEntregaUF)
         {
-            EndEntregaLogradouro = endEntregaLogradouro;
-            EndEntregaNumero = endEntregaNumero;
-            EndEntregaComplemento = endEntregaComplemento;
-            EndEntregaBairro = endEntregaBairro;
-            EndEntregaCEP = endEntregaCEP;
-            EndEntregaMunicipio = endEntregaMunicipio;
-            EndEntregaUF = endEntregaUF;
+            EndEntrega.Update(endEntregaLogradouro, endEntregaNumero, endEntregaComplemento, endEntregaBairro, endEntregaCEP, endEntregaMunicipio, endEntregaUF);
         }
 
         public void UpdateEnderecoComercial(string endComercialLogradouro, string endComercialNumero, string endComercialComplemento, string endComercialBairro, string endComercialCEP, string endComercialMunicipio, string endComercialUF)
         {
-            EndComercialLogradouro = endComercialLogradouro;
-            EndComercialNumero = endComercialNumero;
-            EndComercialComplemento = endComercialComplemento;
-            EndComercialBairro = endComercialBairro;
-            EndComercialCEP = endComercialCEP;
-            EndComercialMunicipio = endComercialMunicipio;
-            EndComercialUF = endComercialUF;
+            EndComercial.Update(endComercialLogradouro, endComercialNumero, endComercialComplemento, endComercialBairro, endComercialCEP, endComercialMunicipio, endComercialUF);
         }
+    }
+
+    class Endereco
+    {
+        public Endereco(string logradouro, string numero, string complemento, string bairro, string cEP, string municipio, string uF)
+        {
+            Update(logradouro, numero, complemento, bairro, cEP, municipio, uF);
+        }
+
+        public void Update(string logradouro, string numero, string complemento, string bairro, string cEP, string municipio, string uF)
+        {
+            Logradouro = logradouro;
+            Numero = numero;
+            Complemento = complemento;
+            Bairro = bairro;
+            CEP = cEP;
+            Municipio = municipio;
+            UF = uF;
+        }
+
+        public string GetTexto()
+        {
+            return $"Endereço: {Logradouro} {Numero} {Complemento} - {Bairro} - CEP {CEP} - {Municipio} - {UF}";
+        }
+
+        public string Logradouro { get; private set; }
+        public string Numero { get; private set; }
+        public string Complemento { get; private set; }
+        public string Bairro { get; private set; }
+        public string CEP { get; private set; }
+        public string Municipio { get; private set; }
+        public string UF { get; private set; }
     }
 }
