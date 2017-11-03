@@ -39,5 +39,6 @@ namespace refatoracao.R10.MoveMethod.depois
     class TipoConta
     {
         public bool EhPremium { get; set; }
+
     }
 }
