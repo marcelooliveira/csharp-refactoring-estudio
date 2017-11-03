@@ -47,12 +47,12 @@ namespace refatoracao.R12.ExtractClass.antes
 
         public string GetTextoEnderecoComercial()
         {
-            return $"Endereço Comercial: {EndComercialLogradouro} {EndComercialNumero} {EndComercialComplemento} - {EndComercialBairro} - CEP {EndComercialCEP} - {EndComercialMunicipio} - {EndComercialUF}";
+            return $"Endereço: {EndComercialLogradouro} {EndComercialNumero} {EndComercialComplemento} - {EndComercialBairro} - CEP {EndComercialCEP} - {EndComercialMunicipio} - {EndComercialUF}";
         }
 
         public string GetTextoEnderecoEntrega()
         {
-            return $"Endereço Entrega: {EndEntregaLogradouro} {EndEntregaNumero} {EndEntregaComplemento} - {EndEntregaBairro} - CEP {EndEntregaCEP} - {EndEntregaMunicipio} - {EndEntregaUF}";
+            return $"Endereço: {EndEntregaLogradouro} {EndEntregaNumero} {EndEntregaComplemento} - {EndEntregaBairro} - CEP {EndEntregaCEP} - {EndEntregaMunicipio} - {EndEntregaUF}";
         }
 
         public void UpdateEnderecoEntrega(string endEntregaLogradouro, string endEntregaNumero, string endEntregaComplemento, string endEntregaBairro, string endEntregaCEP, string endEntregaMunicipio, string endEntregaUF)
