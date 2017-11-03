@@ -6,12 +6,12 @@ namespace refatoracao.R13.InlineClass.depois
 {
     class Empresa
     {
-        public RazaoSocial RazaoSocial { get; private set; }
-        public CNPJ CNPJ { get; private set; }
+        public string RazaoSocial { get; private set; }
+        public string CNPJ { get; private set; }
         public Endereco EnderecoEntrega { get; private set; }
         public Endereco EnderecoCobranca { get; private set; }
 
-        public Empresa(RazaoSocial razaoSocial, CNPJ cnpj, Endereco enderecoEntrega, Endereco enderecoCobranca)
+        public Empresa(string razaoSocial, string cnpj, Endereco enderecoEntrega, Endereco enderecoCobranca)
         {
             RazaoSocial = razaoSocial;
             CNPJ = cnpj;
@@ -32,26 +32,6 @@ namespace refatoracao.R13.InlineClass.depois
         public string GetEndereco()
         {
             return $"{Logradouro} {Numero} {Complemento} - {Bairro} - CEP {CEP} - {Municipio} - {UF}";
-        }
-    }
-
-    class CNPJ
-    {
-        public string Codigo { get; private set; }
-
-        public CNPJ(string codigo)
-        {
-            this.Codigo = codigo;
-        }
-    }
-
-    class RazaoSocial
-    {
-        public string Nome { get; private set; }
-
-        public RazaoSocial(string nome)
-        {
-            Nome = nome;
         }
     }
 }
