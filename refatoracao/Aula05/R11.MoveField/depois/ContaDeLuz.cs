@@ -12,30 +12,14 @@ namespace refatoracao.R11.MoveField.depois
             get { return tipoDeConta; }
         }
 
-        private decimal jurosAoMes;
-        public decimal JurosAoMes
-        {
-            get { return jurosAoMes; }
-            set { jurosAoMes = value; }
-        }
-
         public ContaDeLuz(TipoDeConta tipoDeConta)
         {
             this.tipoDeConta = tipoDeConta;
-
-            if (tipoDeConta is ContaResidencial)
-            {
-                this.jurosAoMes = .030M;
-            }
-            else
-            {
-                this.jurosAoMes = .060M;
-            }
         }
 
         public decimal CalcularValorDosJuros(decimal principal, int diasAtraso)
         {
-            decimal jurosAoDia = JurosAoMes / 30.0M;
+            decimal jurosAoDia = tipoDeConta.JurosAoMes / 30.0M;
             decimal juros = jurosAoDia * diasAtraso;
             return juros * principal;
         }
@@ -43,18 +27,28 @@ namespace refatoracao.R11.MoveField.depois
     
     abstract class TipoDeConta
     {
-
+        protected decimal jurosAoMes;
+        public decimal JurosAoMes
+        {
+            get { return jurosAoMes; }
+        }
     }
 
     class ContaResidencial : TipoDeConta
     {
-
+        public ContaResidencial()
+        {
+            this.jurosAoMes = .030M;
+        }
     }
 
 
     class ContaComercial : TipoDeConta
     {
-
+        public ContaComercial()
+        {
+            this.jurosAoMes = .060M;
+        }
     }
 }
 
