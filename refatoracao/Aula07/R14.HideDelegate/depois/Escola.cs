@@ -17,7 +17,11 @@ namespace refatoracao.R14.HideDelegate.depois
 
     class Funcionario
     {
-        public Departamento Departamento { get; private set; }
+        private Departamento Departamento { get; }
+        public Funcionario GetDiretor()
+        {
+            return this.Departamento.Escola.Diretor;
+        }
     }
 
     class Teste
@@ -25,7 +29,7 @@ namespace refatoracao.R14.HideDelegate.depois
         public Teste()
         {
             var maria = new Funcionario();
-            var diretorDaMaria = maria.Departamento.Escola.Diretor;
+            var diretorDaMaria = maria.GetDiretor();
         }
     }
 }
