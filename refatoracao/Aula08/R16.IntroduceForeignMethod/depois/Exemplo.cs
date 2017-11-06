@@ -9,7 +9,12 @@ namespace refatoracao.R16.IntroduceForeignMethod.depois
         public Exemplo()
         {
             var data = DateTime.Today;
-            var ultimoDiaDoMes = new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
+            var ultimoDiaDoMes = GetUltimoDiaDoMes(data);
+        }
+
+        private static DateTime GetUltimoDiaDoMes(DateTime data)
+        {
+            return new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
         }
     }
 }
