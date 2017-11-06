@@ -34,33 +34,11 @@ namespace refatoracao.R15.RemoveMiddleMan.depois
         }
     }
 
-    class Empregado
-    {
-        private readonly Funcionario funcionario;
-        public Empregado(Funcionario funcionario)
-        {
-            this.funcionario = funcionario;
-        }
-
-        public Funcionario Diretor
-        {
-            get
-            {
-                return funcionario.Diretor;
-            }
-        }
-
-        public decimal Salario
-        {
-            get { return funcionario.Salario; }
-        }
-    }
-
     class Teste
     {
         public Teste()
         {
-            var maria = new Empregado(new Funcionario());
+            var maria = new Funcionario();
             var diretorDaMaria = maria.Diretor;
         }
     }
