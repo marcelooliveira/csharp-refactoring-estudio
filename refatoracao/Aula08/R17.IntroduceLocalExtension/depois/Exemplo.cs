@@ -9,24 +9,27 @@ namespace refatoracao.R17.IntroduceLocalExtension.depois
         public Exemplo()
         {
             var data = DateTime.Today;
-            var ultimoDiaDoMes = UltimoDiaDoMes(data);
-            var primeiroDiaDoMes = PrimeiroDiaDoMes(data);
-            var ehFimDeSemana = EhFimDeSemana(data);
+            var ultimoDiaDoMes = data.UltimoDiaDoMes();
+            var primeiroDiaDoMes = data.PrimeiroDiaDoMes();
+            var ehFimDeSemana = data.EhFimDeSemana();
         }
+    }
 
-        private DateTime PrimeiroDiaDoMes(DateTime data)
+    static class DateTimeExtensions
+    {
+        public static DateTime PrimeiroDiaDoMes(this DateTime data)
         {
             return new DateTime(data.Year, data.Month, 1);
         }
 
-        private DateTime UltimoDiaDoMes(DateTime data)
+        public static DateTime UltimoDiaDoMes(this DateTime data)
         {
             return new DateTime(data.Year, data.Month, DateTime.DaysInMonth(data.Year, data.Month));
         }
 
-        private bool EhFimDeSemana(DateTime data)
+        public static bool EhFimDeSemana(this DateTime data)
         {
-            return data.DayOfWeek == DayOfWeek.Saturday 
+            return data.DayOfWeek == DayOfWeek.Saturday
                 || data.DayOfWeek == DayOfWeek.Sunday;
         }
     }
